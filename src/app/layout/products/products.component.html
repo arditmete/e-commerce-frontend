@@ -1,0 +1,142 @@
+<!-- FEATURED PRODUCTS -->
+<div class="featured-products">
+    <div class="container">
+        <div class="row">
+            <h5 class="heading"><span>Featured Products</span></h5>
+            <ul class="filter" data-option-key="filter">
+                <li><a class="selected" href="#filter" data-option-value="*">All</a></li>
+                <li *ngFor="let cat of categories"><a href="#" data-option-value="cat.name">{{cat.name}}</a></li>
+            </ul>
+            <div id="isotope" class="isotope">
+                <div *ngFor="let product of products" class="isotope-item">
+                    <div class="product-item">
+                        <div class="item-thumb">
+                            <div class="badge new">New</div>
+                            <img src="assets/images/products/fashion/1.jpg" class="img-responsive" alt="" />
+                            <div class="overlay-rmore fa fa-search quickview" data-toggle="modal"
+                                data-target="#myModal"></div>
+                            <div class="product-overlay">
+                                <a href="#" class="addcart fa fa-shopping-cart"></a>
+                                <a href="#" class="compare fa fa-signal"></a>
+                                <a href="#" class="likeitem fa fa-heart-o"></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title"><a href="./single-product.html">{{product.productName}}</a>
+                            </h4>
+                            <span class="product-price">${{product.productPrice}} <em>- Pre order</em></span>
+                            <div class="item-colors">
+                                <a href="#" class="black"></a>
+                                <a href="#" class="brown"></a>
+                                <a href="#" class="red"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                    class="fa fa-times"></i></button>
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <div class="owl-carousel sync1">
+                        <div class="item"> <img src="assets/images/products/single/5-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/8-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/7-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/3-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/4-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/1-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/2-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/3-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/4-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/5-small.jpg" alt=""> </div>
+                    </div>
+
+                    <div class="owl-carousel sync2">
+                        <div class="item"> <img src="assets/images/products/single/5-small.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/1.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/2.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/3.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/4.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/1.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/2.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/3.jpg" alt=""> </div>
+                        <div class="item"> <img src="assets/images/products/single/4.jpg" alt=""> </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-6">
+                    <div class="product-single">
+                        <div class="ps-header">
+                            <span class="badge offer">-50%</span>
+                            <h3>Product fashion</h3>
+                            <div class="ratings-wrap">
+                                <div class="ratings">
+                                    <span class="act fa fa-star"></span>
+                                    <span class="act fa fa-star"></span>
+                                    <span class="act fa fa-star"></span>
+                                    <span class="act fa fa-star"></span>
+                                    <span class="act fa fa-star"></span>
+                                </div>
+                                <em>(6 reviews)</em>
+                            </div>
+                            <div class="ps-price"><span>$ 200.00</span> $ 99.00</div>
+                        </div>
+
+                        <div class="ps-stock">
+                            Available: <a href="#">In Stock</a>
+                        </div>
+                        <div class="sep"></div>
+                        <div class="ps-color">
+                            <p>Color<span>*</span></p>
+                            <a class="black" href="#" onclick="return false;"></a>
+                            <a class="red" href="#" onclick="return false;"></a>
+                            <a class="yellow" href="#" onclick="return false;"></a>
+                            <a class="darkgrey" href="#" onclick="return false;"></a>
+                            <a class="litebrown" href="#" onclick="return false;"></a>
+                        </div>
+                        <div class="space10"></div>
+                        <div class="row select-wraps">
+                            <div class="col-md-7 col-sm-7">
+                                <p>Size<span>*</span></p>
+                                <select>
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                    <option>XXXL</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5 col-sm-5">
+                                <p>Quantity<span>*</span></p>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space20"></div>
+                        <div class="share">
+                            <span>
+                                <a href="#" class="fa fa-heart-o" onclick="return false;"></a>
+                                <a href="#" class="fa fa-signal" onclick="return false;"></a>
+                                <a href="#" class="fa fa-envelope-o" onclick="return false;"></a>
+                            </span>
+                            <div class="addthis_native_toolbox"></div>
+                        </div>
+                        <div class="space20"></div>
+                        <div class="sep"></div>
+                        <a class="btn-color" href="#">Add to Bag</a>
+                        <a class="btn-black" href="#">Go to Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

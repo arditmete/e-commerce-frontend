@@ -1,0 +1,41 @@
+<div data-toggle="modal" data-target="#createCategorytModal" class="create-category">
+    <button type="button" class="btn btn-info">Create new category</button>
+</div>
+<app-blocks-wrap></app-blocks-wrap>
+
+<!-- Modal -->
+<div class="modal fade" id="createCategorytModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                    class="fa fa-times"></i></button>
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <div class="owl-carousel sync1">
+                        <div class="item"> <img src="assets/images/products/single/5-small.jpg" alt=""> </div>
+                    </div>
+                    <div class="owl-carousel sync2">
+                        <div class="item"> <img src="assets/images/products/single/4.jpg" alt=""> </div>
+                    </div>
+                </div>
+                <form class="col-md-7 col-sm-6"  [formGroup]="categoryForm">
+                    <div class="product-single">
+                        <div class="ps-color">
+                            <a class="darkgrey" href="#" onclick="return false;"></a>
+                            <a class="litebrown" href="#" onclick="return false;"></a>
+                        </div>
+                        <div class="space10"></div>
+                        <div class="row select-wraps" >
+                            <div class="col-7 col-sm-7">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-black" type="submit" (click) ="onSubmit()">Add category</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

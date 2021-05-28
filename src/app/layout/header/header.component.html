@@ -1,0 +1,170 @@
+<!-- HEADER -->
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Logo -->
+                    <a class="navbar-brand" routerLink="home" (click)="reloadPageHome()"><img src="assets/images/basic/logo.png"
+                            class="img-responsive" alt="" /></a>
+                </div>
+                <!-- Cart & Search -->
+                <div class="header-xtra pull-right">
+                    <div class="topcart">
+                        <span><i class="fa fa-shopping-cart"></i></span>
+                        <div class="cart-info">
+                            <small>You have <em class="highlight">3 item(s)</em> in your shopping bag</small>
+                            <div class="ci-item">
+                                <img src="assets/images//products/fashion/8.jpg" width="80" alt="" />
+                                <div class="ci-item-info">
+                                    <h5><a href="./single-product.html">Product fashion</a></h5>
+                                    <p>2 x $250.00</p>
+                                    <div class="ci-edit">
+                                        <a href="#" class="edit fa fa-edit"></a>
+                                        <a href="#" class="edit fa fa-trash"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ci-item">
+                                <img src="assets/images//products/fashion/15.jpg" width="80" alt="" />
+                                <div class="ci-item-info">
+                                    <h5><a href="./single-product.html">Product fashion</a></h5>
+                                    <p>2 x $250.00</p>
+                                    <div class="ci-edit">
+                                        <a href="#" class="edit fa fa-edit"></a>
+                                        <a href="#" class="edit fa fa-trash"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ci-total">Subtotal: $750.00</div>
+                            <div class="cart-btn">
+                                <a href="#">View Bag</a>
+                                <a href="#">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topsearch">
+                        <span>
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <form class="searchtop">
+                            <input type="text" placeholder="Search entire store here.">
+                        </form>
+                    </div>
+                </div>
+                <!-- Navmenu -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="./index.html" class="dropdown-toggle active" data-toggle="dropdown" role="button" 
+                                aria-expanded="false">Home</a>
+                        </li>
+                        <li class="dropdown mmenu">
+                            <a routerLink="products" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-expanded="false">Products</a>
+                            <ul class="mega-menu dropdown-menu" role="menu">
+                                <li>
+                                    <div>
+                                        <h5>Sample Title</h5>
+                                        <a href="#">Nam ipsum est</a>
+                                        <a href="#">Volutpat</a>
+                                        <a href="#">In efficitur in</a>
+                                        <a href="#">Accumsan eget <span class="mm-badge-sale">Sale</span></a>
+                                        <a href="#">Odio</a>
+                                        <a href="#">Curabitur</a>
+                                        <a href="#">Phasellus <span class="mm-badge-new">New</span></a>
+                                        <a href="#">Dapibus elit</a>
+                                        <a href="#">Nurna ullamcorper</a>
+                                        <a href="#">Lobortis</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h5>Sample Title</h5>
+                                        <a href="#">Nam ipsum est</a>
+                                        <a href="#">Volutpat</a>
+                                        <a href="#">In efficitur in</a>
+                                        <a href="#">Accumsan eget</a>
+                                        <a href="#">Odio</a>
+                                        <a href="#">Curabitur</a>
+                                        <a href="#">Phasellus</a>
+                                        <a href="#">Dapibus elit</a>
+                                        <a href="#">Nurna ullamcorper</a>
+                                        <a href="#">Lobortis</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h5>Sample Title</h5>
+                                        <a href="#">Nam ipsum est</a>
+                                        <a href="#">Volutpat</a>
+                                        <a href="#">In efficitur in</a>
+                                        <a href="#">Accumsan eget</a>
+                                        <a href="#">Odio</a>
+                                        <a href="#">Curabitur</a>
+                                        <a href="#">Phasellus</a>
+                                        <a href="#">Dapibus elit</a>
+                                        <a href="#">Nurna ullamcorper</a>
+                                        <a href="#">Lobortis</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a routerLink="categories" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-expanded="false">Category</a>
+                            <ul class="dropdown-menu submenu" role="menu">
+                                <li><a href="./categories-grid.html">Shop - Grid 1</a>
+                                <li><a href="./categories-list.html">Shop - Grid 2</a>
+                                <li><a href="./single-product.html">Shop - Single</a></li>
+                                <li><a href="./shoppingcart.html">Shopping Cart</a></li>
+                                <li><a href="./checkout.html">Checkout 1</a></li>
+                                <li><a href="./checkout-2.html">Checkout 2</a></li>
+                                <li><a href="./checkout-2-leftside.html">Checkout Left Sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Blog</a>
+                            <ul class="dropdown-menu submenu" role="menu">
+                                <li><a href="./blog.html">Blog Posts</a>
+                                <li><a href="./blog-single.html">Blog Single</a>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Pages</a>
+                            <ul class="dropdown-menu submenu" role="menu">
+                                <li><a href="contact-1.html">Contact Style 1</a></li>
+                                <li><a href="contact-2.html">Contact Style 2</a></li>
+                                <li><a href="account-information.html"> Account Information </a></li>
+                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="cng-pw.html">Change Password</a></li>
+                                <li><a href="address-book.html">Address Books</a></li>
+                                <li><a href="order-history.html">Order History</a></li>
+                                <li><a href="review-rating.html">Reviews and Ratings</a></li>
+                                <li><a href="return.html">Returns Requests</a></li>
+                                <li><a href="newsletter.html">Newsletter</a></li>
+                                <li><a href="myaccount-leftsidebar.html">Left Sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a routerLink="/sign-in" *ngIf="!isLoggedIn" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Log in</a>
+                                <a routerLink="/sign-in" (click)="logout()" *ngIf="isLoggedIn" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
