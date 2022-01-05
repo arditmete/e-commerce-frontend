@@ -7,4 +7,4 @@ before_install:
  - docker build -t frontend .
 
 script:
- - docker run frontend npm run test
+ - docker run frontend npm run test --coverage
