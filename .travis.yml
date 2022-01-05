@@ -3,7 +3,7 @@ services:
  - docker
 
 before_install:
- - docker build -f arditi1997/e-commerce-frontend .
+ - docker build -f arditi1997/e-commerce-frontend/arditi1997 .
 
 script:
- - docker run arditi1997/e-commerce-frontend npm run test 
+ - docker run arditi1997/e-commerce-frontend/arditi1997 npm run test
