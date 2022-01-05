@@ -4,17 +4,18 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/Product';
 import { ProductDto } from 'src/app/model/ProductDto';
 import { User } from 'src/app/model/User';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  
+
   headers: HttpHeaders;
-  API_NAME = "http://localhost:8080/product/admin/";
+  API_NAME = environment.APIURL + "product/admin/";
   currentUser: User;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.headers = new HttpHeaders({
       authorization: 'Bearer ' + this.currentUser.token,
@@ -25,7 +26,7 @@ export class ProductService {
   }
 
 getProducts(){
-  return this.http.get<ProductDto[]>("http://localhost:8080/product/admin/product-list", { headers: this.headers });
+  return this.http.get<ProductDto[]>(environment.APIURL + "product/admin/product-list", { headers: this.headers });
 }
 
   addProduct(product: Product): Observable<any> {

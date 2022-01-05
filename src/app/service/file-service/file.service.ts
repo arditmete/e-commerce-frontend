@@ -4,16 +4,16 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/Product';
 import { ProductDto } from 'src/app/model/ProductDto';
 import { User } from 'src/app/model/User';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileService {
 
-  API_NAME = "http://localhost:8080";
   headers: HttpHeaders;
   currentUser: User;
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
 
@@ -29,12 +29,12 @@ export class FileService {
 
     formData.append('file', file);
     formData.append("product", product);
-    const req = new HttpRequest('POST', `${this.API_NAME}/upload`, formData,  {headers: this.headers});
+    const req = new HttpRequest('POST', `${environment.APIURL}/upload`, formData,  {headers: this.headers});
 
     return this.http.request(req);
   }
 
   getFiles(): Observable<any> {
-    return this.http.get(`${this.API_NAME}/files`);
+    return this.http.get(`${environment.APIURL}/files`);
   }
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from 'src/app/model/category';
 import { User } from 'src/app/model/User';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,6 @@ import { User } from 'src/app/model/User';
 export class CategoryService {
 
   headers: HttpHeaders;
-  API_NAME = "http://localhost:8080/category/admin/";
   currentUser: User;
 
   constructor(private http: HttpClient) {
@@ -23,12 +23,12 @@ export class CategoryService {
   }
 
   addCategory(category: Category): Observable<any> {
-    return this.http.post(this.API_NAME + 'create-category', category);
+    return this.http.post(environment.APIURL + 'category/admin/create-category', category);
   }
 
   getCategories(): Observable<Category[]> {
 
-    return this.http.get<Category[]>("http://localhost:8080/category/admin/categories", { headers: this.headers });
+    return this.http.get<Category[]>(environment.APIURL + "category/admin/categories", { headers: this.headers });
   }
 
 }

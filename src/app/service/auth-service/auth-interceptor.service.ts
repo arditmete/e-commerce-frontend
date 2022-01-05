@@ -8,7 +8,7 @@ import { TokenStorageService } from './token-storage.service';
 const TOKEN_HEADER_KEY = 'Authorization';       // for Spring Boot back-end
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export class AuthInterceptorService implements HttpInterceptor {
   constructor(private token: TokenStorageService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -22,6 +22,6 @@ export class AuthInterceptor implements HttpInterceptor {
 }
 
 export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
 ];
 

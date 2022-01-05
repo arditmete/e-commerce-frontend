@@ -5,13 +5,14 @@ import { JwtRequest } from 'src/app/model/JwtRequest';
 import { User } from 'src/app/model/User';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { RoleEnum } from 'src/app/model/RoleEnum';
+import { CoreEnvironment } from '@angular/compiler/src/compiler_facade_interface';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
-  AUTH_API: string = 'http://localhost:8080/admin/';
   isLoggedIn = false;
 
   httpOptions = {
@@ -28,7 +29,9 @@ export class AuthService {
   }
 
   login(jwtRequest: JwtRequest): Observable<any> {
-    return this.http.post('http://localhost:8080/authenticate', jwtRequest, this.httpOptions).pipe(map(user => {
+    console.log(environment.APIURL + "apiurl");
+    
+    return this.http.post(environment.APIURL +'authenticate', jwtRequest, this.httpOptions).pipe(map(user => {
       localStorage.setItem('currentUser', JSON.stringify(user));
       this.currentUserSubject.next(user as User);
       return user;
@@ -44,7 +47,7 @@ export class AuthService {
   }
 
   register(username: string, email: string, password: string): Observable<any> {
-    return this.http.post(this.AUTH_API + 'signup', {
+    return this.http.post(environment.APIURL+ 'admin/signup', {
       username,
       email,
       password
@@ -58,6 +61,8 @@ export class AuthService {
    }else{
      this.isLoggedIn == false;
    }
+   console.log(this.isLoggedIn);
+
    return this.isLoggedIn;
   }
 

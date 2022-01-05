@@ -1,9 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpEvent, HttpEventType, HttpHeaders, HttpParams, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { async } from '@angular/core/testing';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { catchError, first, map } from 'rxjs/operators';
 import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/Product';
@@ -12,7 +10,7 @@ import { AuthService } from 'src/app/service/auth-service/auth-service.service';
 import { CategoryService } from 'src/app/service/category-service/category.service';
 import { FileService } from 'src/app/service/file-service/file.service';
 import { ProductService } from 'src/app/service/product-service/product.service';
-import { AuthGuard } from 'src/helpers/authGuard';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -91,12 +89,11 @@ export class ProductComponent implements OnInit {
     )
   }
   upload(code: string) {
-    debugger
     this.currentFile = this.selectedFiles.item(0);
     let formData = new FormData();
     formData.append("file", this.currentFile);
     formData.append("code", code);
-    return this.http.post("http://localhost:8080/file/upload", formData).subscribe(data=>{
+    return this.http.post(environment.APIURL + "file/upload", formData).subscribe(data=>{
       console.log(data);
     })
   }
@@ -106,7 +103,6 @@ export class ProductComponent implements OnInit {
   }
 
   onSubmit(): void {
-    debugger
     this.currentUser = this.authService.currentUserValue;
     let product = new Product(this.name.value, this.quantity.value, this.price.value, this.categorySelected, this.code.value)
     this.productService.addProduct(product).subscribe(
