@@ -20,4 +20,4 @@ before_install:
  - docker build -t frontend .
 
 script:
- - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox --coverage
+ - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
