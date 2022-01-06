@@ -1,10 +1,23 @@
+dist: trusty
 sudo: required
 language: generic
+
 services:
  - docker
 
+cache:
+  directories:
+    - ./node_modules
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+      
 before_install:
  - docker build -t frontend .
 
 script:
- - docker run frontend npm run test --coverage
+ - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox --coverage
