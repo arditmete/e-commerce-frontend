@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/service/category-service/category.servi
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent  {
 
   currentUser: any;
   categoryForm = new FormGroup({
@@ -18,8 +18,7 @@ export class CategoryComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
    }
 
-  ngOnInit(): void {
-  }
+ 
 
    get name(): any{
    return  this.categoryForm.get("name")?.value as FormArray;

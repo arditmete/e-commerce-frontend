@@ -9,7 +9,7 @@ import { UserService } from 'src/app/service/user-service/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   user = new User;
   constructor(private userService: UserService, private httpClient: HttpClient) { }
@@ -24,9 +24,6 @@ export class RegisterComponent implements OnInit {
     phoneNumber: new FormControl()
   })
 
-  ngOnInit(): void {
-
-  }
 
   onSubmit(): void {
     this.user.email = this.registerForm.value.email;

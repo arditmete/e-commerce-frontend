@@ -13,4 +13,13 @@ before_install:
  - docker build -t frontend .
 
 script:
+ - ng lint
  - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/travis-demo
+  on:
+    branch: main
