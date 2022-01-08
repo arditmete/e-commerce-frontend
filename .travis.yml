@@ -14,12 +14,17 @@ before_install:
 
 script:
  - ng lint
- - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+ - ng build --prod --base-href https://github.com/arditi1997/e-commerce-frontend
+ - docker run frontend-docker1 npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/travis-demo
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'docker'
+  env: 'docker-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-923445559289'
+  bucket_path: 'docker'
   on:
     branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
