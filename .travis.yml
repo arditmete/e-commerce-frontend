@@ -14,6 +14,8 @@ before_install:
  - docker build -t frontend .
 
 before_script:
+ - nvm install 14
+ - nvm use 14
 
 script:
  - ng lint
