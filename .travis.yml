@@ -16,6 +16,7 @@ before_script:
  - npm install -g --save @angular/cli
  - nvm install 14
  - nvm use 14
+ - ng version
 
 script:
  - ng lint
