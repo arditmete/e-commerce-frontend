@@ -10,10 +10,10 @@ cache:
     - ./node_modules
 
 before_install:
- - npm install -g --save @angular/cli
  - docker build -t frontend .
 
 before_script:
+ - npm install -g --save @angular/cli
  - nvm install 14
  - nvm use 14
 
