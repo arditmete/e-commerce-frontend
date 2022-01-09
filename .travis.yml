@@ -15,6 +15,7 @@ before_install:
 
 script:
  - cd ..
+ - nvm install 12
  - nvm use 12
  - ng lint
  - ng build --prod --base-href https://github.com/arditi1997/e-commerce-frontend
