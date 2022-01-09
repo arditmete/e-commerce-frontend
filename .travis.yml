@@ -15,6 +15,7 @@ before_install:
 
 script:
  - cd ..
+ - npm i ng-common
  - nvm install 12
  - nvm use 12
  - ng lint
