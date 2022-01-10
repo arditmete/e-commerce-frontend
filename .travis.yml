@@ -14,12 +14,11 @@ before_install:
 
 before_script:
  - npm install -g --save @angular/cli
- - nvm install 14
- - nvm use 14
+ - npm link @angular/cli
  - ng version
 
 script:
- - npm run lint
- - npm run-script build 
+ - ng lint
+ - ng build --prod --base-href https://github.com/arditi1997/e-commerce-frontend
  - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
