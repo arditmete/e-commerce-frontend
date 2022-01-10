@@ -11,6 +11,7 @@ ENV CHROME_BIN='/usr/bin/chromium-browser'
 # user who runs the app.
 # https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
 COPY package.json package-lock.json* ./
+RUN rm -rf node_modules
 RUN npm install
 ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
