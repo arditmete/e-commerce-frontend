@@ -13,7 +13,7 @@ before_install:
  - docker build -t frontend .
 
 before_script:
- - npm install -g --save @angular/cli
+ - npm install -g --save @angular/cli@latest
  - npm link @angular/cli
  - ng version
 
