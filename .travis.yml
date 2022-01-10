@@ -15,9 +15,9 @@ before_install:
 before_script:
  - rm -rf node_modules
  - npm cache clean -f 
- - nvm install 10
  - nvm install 12
- - nvm use 10
+ - nvm install 14
+ - nvm use 14
  - npm install -g --save @angular/cli@latest
  - npm link @angular/cli@latest
  - ng version
