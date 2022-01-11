@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.901.15",
+    "@angular-devkit/build-angular": "^13.1.2",
     "@angular/animations": "^13.1.1",
     "@angular/cdk": "^13.1.1",
     "@angular/cli": "^13.1.2",
@@ -25,6 +25,7 @@
     "@angular/router": "~13.1.1",
     "@fortawesome/angular-fontawesome": "^0.8.2",
     "bootstrap": "^5.0.0",
+    "npm-check-updates": "^12.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
