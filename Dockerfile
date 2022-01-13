@@ -13,6 +13,7 @@ ENV CHROME_BIN='/usr/bin/chromium-browser'
 COPY package.json package-lock.json* ./
 RUN rm -rf node_modules
 RUN npm install
+RUN ng lint
 ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
