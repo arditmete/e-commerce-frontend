@@ -20,7 +20,7 @@ before_script:
  - nvm use 14
  - npm install -g --save @angular/cli@latest
  - npm i -g @angular-eslint/builder  
- - npm link @angular/cli@latests
+ - npm link @angular/cli@latest
  - ng version
 
 script:
