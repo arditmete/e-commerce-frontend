@@ -1,1 +1,0 @@
-{"ast":null,"code":"export var RoleEnum = /*#__PURE__*/(() => {\n  (function (RoleEnum) {\n    RoleEnum[\"User\"] = \"USER\";\n    RoleEnum[\"Admin\"] = \"ADMIN\";\n  })(RoleEnum || (RoleEnum = {}));\n\n  return RoleEnum;\n})();","map":null,"metadata":{},"sourceType":"module"}

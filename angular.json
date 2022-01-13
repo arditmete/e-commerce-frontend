@@ -113,10 +113,12 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-             "eslintConfig": ".eslintrc.json",
-             "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
-       }
+        }
       }
     }
   },

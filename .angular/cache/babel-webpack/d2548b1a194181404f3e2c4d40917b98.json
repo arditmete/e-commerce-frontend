@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class JwtRequest {\n  constructor(username, password) {\n    this.username = username;\n    this.password = password;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
