@@ -22,7 +22,6 @@ before_script:
  - npm i -g @angular-eslint/builder  
  - npm link @angular/cli@13.1.3
  - ng version
- - ng g @angular-eslint/schematics:add-eslint-to-project     
 
 script:
  - ng lint

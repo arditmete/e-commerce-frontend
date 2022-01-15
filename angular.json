@@ -124,6 +124,7 @@
   },
   "defaultProject": "ecommerce-shop",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
   }
 }
