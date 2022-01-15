@@ -3,7 +3,7 @@ FROM node:16-alpine3.11 as buld-stage
 # due to default /home permissions we have to create the dir with root and change perms
 RUN mkdir /home/app && chown node:node /home/app
 WORKDIR /home/app
-RUN npm install -g --save @angular/cli
+RUN npm install -g --save @angular/cli@13.1.2
 RUN apk add chromium
 ENV CHROME_BIN='/usr/bin/chromium-browser'
 # the official node image provides an unprivileged user as a security best practice
