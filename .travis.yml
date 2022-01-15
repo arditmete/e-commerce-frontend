@@ -13,14 +13,8 @@ before_install:
  - docker build -t frontend .
 
 before_script:
- - rm -rf node_modules
- - npm cache clean -f 
- - nvm install 12
  - nvm install 14
  - nvm use 14
- - npm install -g --save @angular/cli@13.1.3
- - npm i -g @angular-eslint/builder  
- - npm link @angular/cli@13.1.3
  - ng version
 
 script:
