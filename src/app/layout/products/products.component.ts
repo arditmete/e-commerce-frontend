@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/model/category';
+import type { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/Product';
-import { ProductDto } from 'src/app/model/ProductDto';
-import { CategoryService } from 'src/app/service/category-service/category.service';
-import { ProductService } from 'src/app/service/product-service/product.service';
+import type { ProductDto } from 'src/app/model/ProductDto';
+import type { CategoryService } from 'src/app/service/category-service/category.service';
+import type { ProductService } from 'src/app/service/product-service/product.service';
 
 @Component({
   selector: 'app-products',

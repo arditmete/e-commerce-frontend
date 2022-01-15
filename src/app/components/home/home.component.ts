@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/service/auth-service/token-storage.service';
+import type { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { TokenStorageService } from 'src/app/service/auth-service/token-storage.service';
 
 @Component({
   selector: 'app-home',

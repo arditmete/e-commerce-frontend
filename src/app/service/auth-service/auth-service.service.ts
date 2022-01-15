@@ -1,11 +1,12 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import type { HttpClient} from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { JwtRequest } from 'src/app/model/JwtRequest';
-import { User } from 'src/app/model/User';
-import { BehaviorSubject, Observable } from 'rxjs';
+import type { JwtRequest } from 'src/app/model/JwtRequest';
+import type { User } from 'src/app/model/User';
+import type { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { RoleEnum } from 'src/app/model/RoleEnum';
-import { CoreEnvironment } from '@angular/compiler/src/compiler_facade_interface';
 import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,7 @@ export class AuthService {
   }
 
   isUserLoggedIn(): boolean {
-   let currentUser =  JSON.parse(localStorage.getItem('currentUser') as string);
+   const currentUser =  JSON.parse(localStorage.getItem('currentUser') as string);
    if(currentUser){
     this.isLoggedIn == true;
    }else{
@@ -67,7 +68,7 @@ export class AuthService {
   }
 
   isAdminUser(): boolean {
-    let currentUser =  JSON.parse(localStorage.getItem('currentUser') as string);
+    const currentUser =  JSON.parse(localStorage.getItem('currentUser') as string);
     if (currentUser.role.name == RoleEnum.Admin) {
       return true;
     }

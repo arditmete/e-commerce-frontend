@@ -1,4 +1,4 @@
-import { Product } from "./Product";
+import type { Product } from "./Product";
 
 export class FileDto{
     product: Product | undefined;

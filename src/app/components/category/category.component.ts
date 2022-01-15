@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import type { FormArray} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Category } from 'src/app/model/category';
-import { CategoryService } from 'src/app/service/category-service/category.service';
+import type { CategoryService } from 'src/app/service/category-service/category.service';
 
 @Component({
   selector: 'app-category',
@@ -25,7 +26,7 @@ export class CategoryComponent  {
   }
 
   onSubmit(){
-    let category = new Category(this.name);
+    const category = new Category(this.name);
     this.categoryService.addCategory(category).subscribe(
       data=>{
       }

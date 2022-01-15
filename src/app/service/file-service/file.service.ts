@@ -1,9 +1,8 @@
-import { HttpClient, HttpEvent, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
+import type { HttpClient, HttpEvent} from '@angular/common/http';
+import { HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Product } from 'src/app/model/Product';
-import { ProductDto } from 'src/app/model/ProductDto';
-import { User } from 'src/app/model/User';
+import type { Observable } from 'rxjs';
+import type { User } from 'src/app/model/User';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -24,9 +23,7 @@ export class FileService {
   }
 
   upload(file: File,product: any): Observable<HttpEvent<any>> {
-    debugger
     const formData: FormData = new FormData();
-
     formData.append('file', file);
     formData.append("product", product);
     const req = new HttpRequest('POST', `${environment.APIURL}/upload`, formData,  {headers: this.headers});

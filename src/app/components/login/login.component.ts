@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router';
+import type { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { FormArray, FormBuilder} from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import type { Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { JwtRequest } from 'src/app/model/JwtRequest';
-import { AuthService } from 'src/app/service/auth-service/auth-service.service';
-import { TokenStorageService } from 'src/app/service/auth-service/token-storage.service';
+import type { AuthService } from 'src/app/service/auth-service/auth-service.service';
+import type { TokenStorageService } from 'src/app/service/auth-service/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -43,7 +46,7 @@ export class LoginComponent implements OnInit {
   
   onSubmit(): void {
     let state: RouterStateSnapshot
-    let authenticationRequest = new JwtRequest(this.username.value, this.password.value);
+    const authenticationRequest = new JwtRequest(this.username.value, this.password.value);
    
     this.authService.login(authenticationRequest).subscribe(
      

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from 'src/app/model/User';
-import { AuthService } from 'src/app/service/auth-service/auth-service.service';
-import { TokenStorageService } from 'src/app/service/auth-service/token-storage.service';
+import type { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { Router } from '@angular/router';
+import type { User } from 'src/app/model/User';
+import type { AuthService } from 'src/app/service/auth-service/auth-service.service';
+import type { TokenStorageService } from 'src/app/service/auth-service/token-storage.service';
 
 @Component({
   selector: 'app-header',

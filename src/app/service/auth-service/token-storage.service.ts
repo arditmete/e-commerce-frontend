@@ -7,7 +7,6 @@ const USER_KEY = 'auth-user';
   providedIn: 'root'
 })
 export class TokenStorageService {
-  constructor() { }
 
   public saveToken(token: string): void {
     window.sessionStorage.removeItem(TOKEN_KEY);

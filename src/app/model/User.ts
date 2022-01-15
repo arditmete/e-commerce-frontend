@@ -1,5 +1,4 @@
-import { Role } from "./Role";
-import { RoleEnum } from "./RoleEnum";
+import type { Role } from "./Role";
 
 export class User {
     id: string | undefined;

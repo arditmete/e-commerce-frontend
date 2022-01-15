@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import type { HttpClient} from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Product } from 'src/app/model/Product';
-import { ProductDto } from 'src/app/model/ProductDto';
-import { User } from 'src/app/model/User';
+import type { Observable } from 'rxjs';
+import type { Product } from 'src/app/model/Product';
+import type { ProductDto } from 'src/app/model/ProductDto';
+import type { User } from 'src/app/model/User';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

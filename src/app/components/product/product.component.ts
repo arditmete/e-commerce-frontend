@@ -1,15 +1,18 @@
-import { HttpClient, HttpErrorResponse, HttpEvent, HttpEventType, HttpHeaders, HttpParams, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import type { HttpClient} from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpEventType, HttpHeaders, HttpParams, HttpRequest, HttpResponse } from '@angular/common/http';
+import type { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { FormArray} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import type { Router } from '@angular/router';
 import { catchError, first, map } from 'rxjs/operators';
-import { Category } from 'src/app/model/category';
+import type { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/Product';
-import { User } from 'src/app/model/User';
-import { AuthService } from 'src/app/service/auth-service/auth-service.service';
-import { CategoryService } from 'src/app/service/category-service/category.service';
-import { FileService } from 'src/app/service/file-service/file.service';
-import { ProductService } from 'src/app/service/product-service/product.service';
+import type { User } from 'src/app/model/User';
+import type { AuthService } from 'src/app/service/auth-service/auth-service.service';
+import type { CategoryService } from 'src/app/service/category-service/category.service';
+import type { FileService } from 'src/app/service/file-service/file.service';
+import type { ProductService } from 'src/app/service/product-service/product.service';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-product',
@@ -90,7 +93,7 @@ export class ProductComponent implements OnInit {
   }
   upload(code: string) {
     this.currentFile = this.selectedFiles.item(0);
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append("file", this.currentFile);
     formData.append("code", code);
     return this.http.post(environment.APIURL + "file/upload", formData).subscribe(data=>{
@@ -104,7 +107,7 @@ export class ProductComponent implements OnInit {
 
   onSubmit(): void {
     this.currentUser = this.authService.currentUserValue;
-    let product = new Product(this.name.value, this.quantity.value, this.price.value, this.categorySelected, this.code.value)
+    const product = new Product(this.name.value, this.quantity.value, this.price.value, this.categorySelected, this.code.value)
     this.productService.addProduct(product).subscribe(
       data => {
       },

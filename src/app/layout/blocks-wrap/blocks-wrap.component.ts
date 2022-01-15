@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/model/category';
-import { CategoryService } from 'src/app/service/category-service/category.service';
+import type { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { Category } from 'src/app/model/category';
+import type { CategoryService } from 'src/app/service/category-service/category.service';
 
 @Component({
   selector: 'app-blocks-wrap',

@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import type { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/model/User';
-import { UserService } from 'src/app/service/user-service/user.service';
+import type { UserService } from 'src/app/service/user-service/user.service';
 
 @Component({
   selector: 'app-register',
