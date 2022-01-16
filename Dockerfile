@@ -1,4 +1,4 @@
-FROM node:16-alpine3.11
+FROM node:16-alpine3.11 as builder
 # install dependencies first, in a different location for easier app bind mounting for local development
 # due to default /home permissions we have to create the dir with root and change perms
 RUN mkdir /home/app && chown node:node /home/app
@@ -17,3 +17,7 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
 CMD ng serve --host 0.0.0.0
+
+FROM nginx
+EXPOSE 80
+COPY --from=builder /app/build /usr/share/nginx/html
