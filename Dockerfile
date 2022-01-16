@@ -1,4 +1,4 @@
-FROM node:16-alpine3.11 as buld-stage
+FROM node:16-alpine3.11 as build-stage
 # install dependencies first, in a different location for easier app bind mounting for local development
 # due to default /home permissions we have to create the dir with root and change perms
 RUN mkdir /home/app && chown node:node /home/app
