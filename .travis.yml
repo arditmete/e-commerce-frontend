@@ -29,10 +29,10 @@ script:
 deploy:
     provider: elasticbeanstalk
     region: 'us-east-1'
-    app: 'e-commerce-shop'
+    app: 'E-commerce'
     env: 'Ecommerce-env'
     bucket_name: 'elasticbeanstalk-us-east-1-300168838125'
-    bucket_path: 'e-commerce-shop'
+    bucket_path: 'E-commerce'
     on:
       branch: main
     access_key_id: $AWS_ACCESS_KEY
