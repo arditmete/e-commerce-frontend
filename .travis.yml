@@ -21,10 +21,10 @@ before_script:
  - npm i @angular-eslint/builder
  - ng version
  - git checkout main
+ - git stash
 
 script:
  - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
-
 
 deploy:
     provider: elasticbeanstalk
