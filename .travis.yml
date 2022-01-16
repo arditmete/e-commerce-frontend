@@ -24,3 +24,16 @@ before_script:
 script:
  - ng build --prod --base-href https://github.com/arditi1997/e-commerce-frontend
  - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+
+deploy:
+    provider: elasticbeanstalk
+    region: 'us-east-1'
+    app: 'e-commerce-shop'
+    env: 'Ecommerce-env'
+    bucket_name: 'elasticbeanstalk-us-east-1-300168838125'
+    bucket_path: 'e-commerce-shop'
+    on:
+      branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
