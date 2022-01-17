@@ -20,8 +20,6 @@ before_script:
  - npm i @angular-devkit/build-angular
  - npm i @angular-eslint/builder
  - ng version
- - git checkout main
- - git add .
 
 script:
  - docker run frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
