@@ -17,7 +17,3 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
 CMD ng serve --host 0.0.0.0
-
-FROM nginx
-EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
