@@ -5,7 +5,6 @@ RUN mkdir /home/app && chown node:node /home/app
 WORKDIR /home/app
 RUN npm install -g --save @angular/cli@13.1.3
 RUN apk add chromium
-docker system prune
 ENV CHROME_BIN='/usr/bin/chromium-browser'
 # the official node image provides an unprivileged user as a security best practice
 # but we have to manually enable it. We put it here so npm installs dependencies as the same
