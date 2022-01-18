@@ -18,7 +18,6 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 COPY --chown=node:node . .
 CMD npm run build
 
-
 FROM nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY ./dist /usr/share/nginx/html
+COPY --from=build /home/app/dist /usr/share/nginx/html/
+EXPOSE 80
