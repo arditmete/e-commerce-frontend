@@ -28,7 +28,7 @@ deploy:
     provider: elasticbeanstalk
     region: 'us-east-1'
     app: 'E-commerce'
-    env: 'Ecommerce-env'
+    env: 'Ecommerce-env-2'
     bucket_name: 'elasticbeanstalk-us-east-1-300168838125'
     bucket_path: 'E-commerce'
     on:
