@@ -19,5 +19,5 @@ COPY --chown=node:node . .
 CMD npm run build
 
 FROM nginx
-COPY --from=build /home/app/dist/. /usr/share/nginx/html/.
+COPY . .
 EXPOSE 80
