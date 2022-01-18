@@ -1,6 +1,7 @@
 FROM node:16-alpine3.11
 # install dependencies first, in a different location for easier app bind mounting for local development
 # due to default /home permissions we have to create the dir with root and change perms
+RUN docker system prune
 RUN mkdir /home/app && chown node:node /home/app
 WORKDIR /home/app
 RUN npm install -g --save @angular/cli@13.1.3
