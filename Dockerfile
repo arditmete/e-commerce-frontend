@@ -16,7 +16,6 @@ RUN npm install
 ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
-RUN npm run test
 RUN npm run build
 
 FROM nginx:alpine
