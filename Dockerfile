@@ -17,8 +17,13 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
 RUN npm run build
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 FROM nginx:alpine
 COPY --from=build /home/app/dist /usr/share/nginx/html
 COPY --from=build /home/app/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
+
+FROM build as test
+ENV CHROME_BIN='/usr/bin/chromium-browser'
+RUN npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
