@@ -11,6 +11,7 @@ cache:
 
 before_install:
  - docker build -t frontend .
+ -
 
 before_script:
  - nvm install 14

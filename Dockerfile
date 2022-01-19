@@ -14,13 +14,12 @@ COPY package.json package-lock.json* ./
 RUN rm -rf node_modules
 RUN npm install
 ENV PATH /home/app/node_modules/.bin:$PATH
-RUN CI=true npm test
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
+RUN npm run test
 RUN npm run build
 
-
-FROM nginx
-WORKDIR /home/app
-COPY --from=build /home/app/dist/ecommerce-shop /usr/share/nginx/html
-COPY --from=build /nginx.conf /etc/nginx/conf.d/default.conf
+FROM nginx:alpine
+COPY --from=build /home/app/dist /usr/share/nginx/html
+COPY --from=build /home/app/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
