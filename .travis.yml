@@ -26,10 +26,10 @@ script:
 
 deploy:
     provider: elasticbeanstalk
-    region: 'us-east-2'
+    region: 'us-east-1'
     app: 'Ecommerce'
     env: 'Ecommerce-env'
-    bucket_name: 'elasticbeanstalk-us-west-2-300168838125'
+    bucket_name: 'elasticbeanstalk-us-west-1-300168838125'
     bucket_path: 'Ecommerce'
     on:
       branch: main
