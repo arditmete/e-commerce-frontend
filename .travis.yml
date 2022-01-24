@@ -22,7 +22,7 @@ before_script:
  - ng version
 
 script:
- - docker run -e CI=true frontend npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+ - docker run -e CI=true frontend6 npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
 deploy:
     provider: elasticbeanstalk
