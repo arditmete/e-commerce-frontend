@@ -17,7 +17,7 @@ ENV PATH /home/app/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . .
 RUN npm run build
-ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ng serve --host 0.0.0.0
 
 FROM nginx:alpine
 COPY --from=build /home/app/dist /opt/homebrew/Cellar/nginx/1.21.5/html
