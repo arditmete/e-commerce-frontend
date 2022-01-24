@@ -20,7 +20,7 @@ RUN npm run build
 CMD ng serve --host 0.0.0.0
 
 FROM nginx:alpine
-COPY --from=build /home/app/dist /usr/share/nginx/html
+COPY --from=build /home/app/dist /opt/homebrew/Cellar/nginx/1.21.5/html
 COPY --from=build /home/app/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 
