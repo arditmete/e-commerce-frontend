@@ -1,16 +1,14 @@
-version: '3.3'
+version: '3'
 services:
-  frontend-service:
-    image: frontend50
-    container_name: frontend50
+ frontend-service:
+    image: frontend
+    container_name: frontend
     build:
       context: .
       dockerfile: Dockerfile
     restart: on-failure
-    expose:
-      - 4200
-    ports: 
-        - '4200:4200' # Port mapping
-
+    command: ['npm', 'run', 'start']
+    ports:
+      - "8080:8080"
 
 
